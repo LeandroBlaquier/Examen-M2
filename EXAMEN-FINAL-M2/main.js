@@ -10,13 +10,10 @@ signInButton.addEventListener("click", () => {
   container.classList.remove("right-panel-active");
 });
 
-// const apiTienda = document.querySelector(".container");
-// const url = "https://tiendavirtualmern.herokuapp.com/api";
-// fetch(url).then((response) => console.log(response));
-
-const signUp = document.getElementById("signUp");
+const signUp = document.getElementById("signUpH");
+const init = document.getElementById("signInH");
 // Register
-signUp.addEventListener("click", function ssRegister() {
+signUp.addEventListener("click", function registerOn() {
   function usuario(name, email, password) {
     this.name = name;
     this.email = email;
@@ -32,21 +29,43 @@ signUp.addEventListener("click", function ssRegister() {
     headers: { "Content-Type": "application/json" },
   })
     .then((response) => response.json())
-    .then((data) => console.log(data));
-  alert("Usuario creado exitosamente");
+    .then((data) => {
+      alert("Usuario creado exitosamente");
+      console.log(data);
+    });
 });
 
-//LOGIN
-const init = document.getElementById("signIn");
-init.addEventListener("click", function ssRegister() {
-  function usuario(email, password) {
+// LOGIN;
+
+// init.addEventListener("click", function login() {
+//   function user(email, password) {
+//     this.email = email;
+//     this.password = password;
+//   }
+//   let emaiLogin = document.getElementById("emaiLogin").value;
+//   let passLogin = document.getElementById("passLogin").value;
+//   const userExist = new user(emaiLogin, passLogin);
+//   fetch("https://tiendavirtualmern.herokuapp.com/api/users/login", {
+//     method: "POST",
+//     body: JSON.stringify(userExist),
+//     headers: { "Content-Type": "application/json" },
+//   })
+//     .then((response) => response.json())
+//     .then((data) => {
+//       console.log(data);
+//       alert("usuario creado reyyy");
+//     });
+// });
+//lOGIN
+init.addEventListener("click", function login() {
+  function userAcount(email, password) {
     this.email = email;
     this.password = password;
   }
-  let emailLogin = document.getElementById("emailLogin").value;
+  let emailLogin = document.getElementById("emaiLogin").value;
   let passLogin = document.getElementById("passLogin").value;
-  const userExist = new usuario(emailLogin, passLogin);
-  fetch("https://tiendavirtualmern.herokuapp.com/api/users", {
+  const userExist = new userAcount(emailLogin, passLogin);
+  fetch("https://tiendavirtualmern.herokuapp.com/api/users/login", {
     method: "POST",
     body: JSON.stringify(userExist),
     headers: { "Content-Type": "application/json" },
@@ -54,6 +73,7 @@ init.addEventListener("click", function ssRegister() {
     .then((response) => response.json())
     .then((data) => {
       console.log(data);
-      alert("Porfinnnnnnnnnnnnnnnnnnnnnnnn");
+
+      alert("PORFINNNNNNNNN");
     });
 });
