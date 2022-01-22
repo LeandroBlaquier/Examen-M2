@@ -36,27 +36,6 @@ signUp.addEventListener("click", function registerOn() {
 });
 
 // LOGIN;
-
-// init.addEventListener("click", function login() {
-//   function user(email, password) {
-//     this.email = email;
-//     this.password = password;
-//   }
-//   let emaiLogin = document.getElementById("emaiLogin").value;
-//   let passLogin = document.getElementById("passLogin").value;
-//   const userExist = new user(emaiLogin, passLogin);
-//   fetch("https://tiendavirtualmern.herokuapp.com/api/users/login", {
-//     method: "POST",
-//     body: JSON.stringify(userExist),
-//     headers: { "Content-Type": "application/json" },
-//   })
-//     .then((response) => response.json())
-//     .then((data) => {
-//       console.log(data);
-//       alert("usuario creado reyyy");
-//     });
-// });
-//lOGIN
 init.addEventListener("click", function login() {
   function userAcount(email, password) {
     this.email = email;
